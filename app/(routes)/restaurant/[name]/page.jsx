@@ -3,12 +3,13 @@ import GlobalApi from '@/app/_utils/GlobalApi';
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import Intro from '../_components/Intro';
+import RestoTabs from '../_components/RestoTabs';
 
 function RestaurantDetails() {
 
     const param = usePathname();
-    const [restaurant,setRestaurant]=useState([]);
-    useEffect(()=>{
+    const [restaurant, setRestaurant] = useState([]);
+    useEffect(() => {
         GetRestaurantDetail(param.split("/")[2])
     }, [])
     const GetRestaurantDetail = (restoSlug) => {
@@ -19,7 +20,8 @@ function RestaurantDetails() {
     }
     return (
         <div>
-                <Intro restaurant={restaurant}/>
+            <Intro restaurant={restaurant} />
+            <RestoTabs restaurant={restaurant}/>
         </div>
     )
 }
