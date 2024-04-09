@@ -10,7 +10,9 @@ export default function Home() {
   return (
     <div>
       <CategoryList/>  
-      <BuisnessList/>   
+
+      <BuisnessList/>  
+      {/* <BuisnessList/> */}  
     </div>    
   );
 }
